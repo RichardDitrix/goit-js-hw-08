@@ -2,33 +2,35 @@
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
+console.log(galleryItems);
+
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-console.log(galleryItems);
 
-const galleryContainer = document.querySelector('div.gallery');
 
-galleryContainer.innerHTML = createGalleryMarkup(galleryItems);
+const galleryItemMarkup = ({ preview, original, description }) => {
+	return `
+	
+	  <a class="gallery__item" href="${original}">
+	  <img 
+	  style="display:block"
+	  class="gallery__image"
+	  src="${preview}"
+	  alt="${description}"
+	  />
+	</a>
+	`;
+ };
 
-const lightbox = new SimpleLightbox('div.gallery a', {
+const makeGalleryMarkup = galleryItems.map(galleryItemMarkup).join('');
+
+const galleryElements = document.querySelector('.gallery');
+
+galleryElements.insertAdjacentHTML('beforeend', makeGalleryMarkup);
+
+let gallery = new SimpleLightbox('.gallery a', {
+  captions: true,
   captionsData: 'alt',
   captionDelay: 250,
 });
-
-function createGalleryMarkup(galleryItems) {
-  return galleryItems
-    .map(
-      ({ preview, original, description }) =>
-        `<div class="gallery__item">
-            <a class="gallery__link" href="${original}">
-                <img 
-                    class="gallery__image" 
-                    src="${preview}" 
-                    alt="${description}"
-                />
-            </a>
-        </div>`,
-    )
-    .join('');
-}

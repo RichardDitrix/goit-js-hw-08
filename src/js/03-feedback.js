@@ -43,8 +43,11 @@ const {
 		formData[name] = value;
 	 });
   
+	 
+  
+	 console.log(formData);
+
 	 event.currentTarget.reset();
 	 localStorage.removeItem(KEY);
   
-	 console.log(formData);
   }

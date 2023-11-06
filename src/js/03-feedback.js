@@ -38,13 +38,13 @@ const {
 		 return alert("Form should`nt be empty");
 	 }
 
-  new FormData(event.currentTarget);
-  formDataToSend.forEach((value, name) => {
-    formData[name] = value;
-  });
-
-  event.currentTarget.reset();
-  localStorage.removeItem(KEY);
-
-  console.log(formData);
-}
+	 const formDataToSend = new FormData(event.currentTarget);
+	 formDataToSend.forEach((value, name) => {
+		formData[name] = value;
+	 });
+  
+	 event.currentTarget.reset();
+	 localStorage.removeItem(KEY);
+  
+	 console.log(formData);
+  }

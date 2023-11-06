@@ -29,7 +29,7 @@ const galleryElements = document.querySelector('.gallery');
 
 galleryElements.insertAdjacentHTML('beforeend', makeGalleryMarkup);
 
-let gallery = new SimpleLightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   captions: true,
   captionsData: 'alt',
   captionDelay: 250,
@@ -39,7 +39,7 @@ let gallery = new SimpleLightbox('.gallery a', {
 
 
 
-
+// let gallery = 
 
 
 

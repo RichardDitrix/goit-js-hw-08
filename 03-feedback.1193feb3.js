@@ -5,7 +5,7 @@
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- *//** Used as the `TypeError` message for "Functions" methods. */var r="Expected a function",i=0/0,o=/^\s+|\s+$/g,a=/^[-+]0x[0-9a-f]+$/i,f=/^0b[01]+$/i,u=/^0o[0-7]+$/i,l=parseInt,c="object"==typeof e&&e&&e.Object===Object&&e,s="object"==typeof self&&self&&self.Object===Object&&self,d=c||s||Function("return this")(),m=Object.prototype.toString,p=Math.max,v=Math.min,g=function(){return d.Date.now()};/**
+ *//** Used as the `TypeError` message for "Functions" methods. */var r="Expected a function",i=0/0,o=/^\s+|\s+$/g,a=/^[-+]0x[0-9a-f]+$/i,u=/^0b[01]+$/i,f=/^0o[0-7]+$/i,l=parseInt,c="object"==typeof e&&e&&e.Object===Object&&e,s="object"==typeof self&&self&&self.Object===Object&&self,d=c||s||Function("return this")(),m=Object.prototype.toString,v=Math.max,p=Math.min,g=function(){return d.Date.now()};/**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
  * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -51,7 +51,7 @@
  *
  * _.toNumber('3.2');
  * // => 3.2
- */function b(e){if("number"==typeof e)return e;if("symbol"==typeof(t=e)||t&&"object"==typeof t&&"[object Symbol]"==m.call(t))return i;if(y(e)){var t,n="function"==typeof e.valueOf?e.valueOf():e;e=y(n)?n+"":n}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(o,"");var r=f.test(e);return r||u.test(e)?l(e.slice(2),r?2:8):a.test(e)?i:+e}t.exports=/**
+ */function b(e){if("number"==typeof e)return e;if("symbol"==typeof(t=e)||t&&"object"==typeof t&&"[object Symbol]"==m.call(t))return i;if(y(e)){var t,n="function"==typeof e.valueOf?e.valueOf():e;e=y(n)?n+"":n}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(o,"");var r=u.test(e);return r||f.test(e)?l(e.slice(2),r?2:8):a.test(e)?i:+e}t.exports=/**
  * Creates a throttled function that only invokes `func` at most once per
  * every `wait` milliseconds. The throttled function comes with a `cancel`
  * method to cancel delayed `func` invocations and a `flush` method to
@@ -147,15 +147,15 @@
  *
  * // Cancel the trailing debounced invocation.
  * jQuery(window).on('popstate', debounced.cancel);
- */function(e,t,n){var i,o,a,f,u,l,c=0,s=!1,d=!1,m=!0;if("function"!=typeof e)throw TypeError(r);function x(t){var n=i,r=o;return i=o=void 0,c=t,f=e.apply(r,n)}function O(e){var n=e-l,r=e-c;// Either this is the first call, activity has stopped and we're at the
+ */function(e,t,n){var i,o,a,u,f,l,c=0,s=!1,d=!1,m=!0;if("function"!=typeof e)throw TypeError(r);function T(t){var n=i,r=o;return i=o=void 0,c=t,u=e.apply(r,n)}function h(e){var n=e-l,r=e-c;// Either this is the first call, activity has stopped and we're at the
 // trailing edge, the system time has gone backwards and we're treating
 // it as the trailing edge, or we've hit the `maxWait` limit.
-return void 0===l||n>=t||n<0||d&&r>=a}function T(){var e,n,r,i=g();if(O(i))return h(i);// Restart the timer.
-u=setTimeout(T,(e=i-l,n=i-c,r=t-e,d?v(r,a-n):r))}function h(e){return(// Only invoke if we have `lastArgs` which means `func` has been
+return void 0===l||n>=t||n<0||d&&r>=a}function x(){var e,n,r,i=g();if(h(i))return O(i);// Restart the timer.
+f=setTimeout(x,(e=i-l,n=i-c,r=t-e,d?p(r,a-n):r))}function O(e){return(// Only invoke if we have `lastArgs` which means `func` has been
 // debounced at least once.
-(u=void 0,m&&i)?x(e):(i=o=void 0,f))}function j(){var e,n=g(),r=O(n);if(i=arguments,o=this,l=n,r){if(void 0===u)return(// Reset any `maxWait` timer.
+(f=void 0,m&&i)?T(e):(i=o=void 0,u))}function j(){var e,n=g(),r=h(n);if(i=arguments,o=this,l=n,r){if(void 0===f)return(// Reset any `maxWait` timer.
 c=e=l,// Start the timer for the trailing edge.
-u=setTimeout(T,t),s?x(e):f);if(d)return(// Handle invocations in a tight loop.
-u=setTimeout(T,t),x(l))}return void 0===u&&(u=setTimeout(T,t)),f}return t=b(t)||0,y(n)&&(s=!!n.leading,a=(d="maxWait"in n)?p(b(n.maxWait)||0,t):a,m="trailing"in n?!!n.trailing:m),j.cancel=function(){void 0!==u&&clearTimeout(u),c=0,i=l=o=u=void 0},j.flush=function(){return void 0===u?f:h(g())},j}(e,t,{leading:i,maxWait:t,trailing:o})}});var i=r("dCfNN");let o="feedback-form-state",a={},f=document.querySelector(".feedback-form");f.addEventListener("submit",function(e){e.preventDefault();let t=new FormData(e.currentTarget);t.forEach((e,t)=>{a[t]=e}),e.currentTarget.reset(),localStorage.removeItem(o),console.log(a)}),f.addEventListener("input",(i&&i.__esModule?i.default:i)(function(e){a.email=f.elements.email.value,a.message=f.elements.message.value,localStorage.setItem(o,JSON.stringify(a))},500)),function(){let e=localStorage.getItem(o);if(e){let{email:t,message:n}=JSON.parse(e);f.email.value=t,f.message.value=n,a.email=t,a.message=n}}()}();//# sourceMappingURL=03-feedback.171b8935.js.map
+f=setTimeout(x,t),s?T(e):u);if(d)return(// Handle invocations in a tight loop.
+f=setTimeout(x,t),T(l))}return void 0===f&&(f=setTimeout(x,t)),u}return t=b(t)||0,y(n)&&(s=!!n.leading,a=(d="maxWait"in n)?v(b(n.maxWait)||0,t):a,m="trailing"in n?!!n.trailing:m),j.cancel=function(){void 0!==f&&clearTimeout(f),c=0,i=l=o=f=void 0},j.flush=function(){return void 0===f?u:O(g())},j}(e,t,{leading:i,maxWait:t,trailing:o})}});var i=r("dCfNN");let o="feedback-form-state",a={},u=document.querySelector(".feedback-form");u.addEventListener("submit",function(e){e.preventDefault();let{elements:{email:t,message:n}}=e.currentTarget;if(""===t.value||""===n.value)return alert("Form should`nt be empty");new FormData(e.currentTarget),formDataToSend.forEach((e,t)=>{a[t]=e}),e.currentTarget.reset(),localStorage.removeItem(o),console.log(a)}),u.addEventListener("input",(i&&i.__esModule?i.default:i)(function(e){a.email=u.elements.email.value,a.message=u.elements.message.value,localStorage.setItem(o,JSON.stringify(a))},500)),function(){let e=localStorage.getItem(o);if(e){let{email:t,message:n}=JSON.parse(e);u.email.value=t,u.message.value=n,a.email=t,a.message=n}}()}();//# sourceMappingURL=03-feedback.1193feb3.js.map
 
-//# sourceMappingURL=03-feedback.171b8935.js.map
+//# sourceMappingURL=03-feedback.1193feb3.js.map

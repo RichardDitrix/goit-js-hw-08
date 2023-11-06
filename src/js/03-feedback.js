@@ -31,7 +31,14 @@ function onFormInput(event) {
 function onFormSubmit(event) {
   event.preventDefault();
 
-  const formDataToSend = new FormData(event.currentTarget);
+const {
+		elements : {email, message}
+	 } = event.currentTarget;
+	 if (email.value === "" || message.value === "") {
+		 return alert("Form should`nt be empty");
+	 }
+
+  new FormData(event.currentTarget);
   formDataToSend.forEach((value, name) => {
     formData[name] = value;
   });

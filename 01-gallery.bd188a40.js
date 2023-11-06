@@ -24,6 +24,7 @@ console.log(e);const c=e.map(({preview:t,original:e,description:o})=>`
 	  alt="${o}"
 	  />
 	</a>
-	`).join(""),h=document.querySelector(".gallery");h.insertAdjacentHTML("beforeend",c),new(o&&o.__esModule?o.default:o)(".gallery a",{captions:!0,captionsData:"alt",captionDelay:250});//# sourceMappingURL=01-gallery.73465039.js.map
+	`).join(""),h=document.querySelector(".gallery");h.insertAdjacentHTML("beforeend",c),new(o&&o.__esModule?o.default:o)(".gallery a",{captions:!0,captionsData:"alt",captionDelay:250});// let gallery = 
+//# sourceMappingURL=01-gallery.bd188a40.js.map
 
-//# sourceMappingURL=01-gallery.73465039.js.map
+//# sourceMappingURL=01-gallery.bd188a40.js.map
